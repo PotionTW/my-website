@@ -1,0 +1,255 @@
+  body {
+    background-color: #ffffff;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  
+  
+  
+  
+  /* 頂部導航欄 */
+  #top-bar {
+    position: fixed;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: top 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  
+  #top-bar.show {
+    top: 0 !important;
+  }
+  
+  .top-bar-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ff4c4c; /* 滑鼠懸停時變紅 */
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+/*----------------------------------*/
+  .player-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  
+  .player-button {
+    display: flex;
+    align-items: center;
+    background-color: #023e5a;
+    padding: 10px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    min-width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .player-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  .player-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 18%;
+    margin-right: 15px;
+  }
+  .partners-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 18%;
+    margin-right: 15px;
+  }
+  
+  .player-name {
+    font-size: 0.88rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .thanks-text {
+    z-index: 5;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #090710;
+    text-align: center; /* 標題置中 */
+  }
+
+  /* 背景遮罩 */
+.chest-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.chest-overlay.hidden {
+  display: none;
+}
+
+/* 背景 */
+.chest-grid {
+  background: url('../assets/images/chest_gui.png') no-repeat center;
+  background-size: cover;
+  width: 750px;
+  height: 562.5px;
+  display: grid;
+  grid-template-columns: repeat(15, 5px);
+  grid-template-rows: repeat(10 5px);
+  gap: 1px; /* ✅ 正確的間距縮小方式 */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item-slot {
+  width: 75px;
+  height: 75px;
+  background-image: url('../assets/images/slot.png');
+  background-size: cover;
+  position: relative;
+  margin-left: 18px; /* ✅ 向右移動 */
+  margin-top: 60px;     /* ✅ 下調格子起始位置 */
+}
+
+
+.item-slot img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 75px;
+  height: 75px;
+  pointer-events: none;
+}
+
+.item-slot.clickable {
+  cursor: pointer;
+}
+
+/* 背景遮罩 */
+.chest-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.chest-overlay.hidden {
+  display: none;
+}
+
+/* 背景 */
+.chest-grid {
+  background: url('../assets/images/chest_gui.png') no-repeat center;
+  background-size: cover;
+  width: 750px;
+  height: 562.5px;
+  display: grid;
+  grid-template-columns: repeat(9, 75px);
+  grid-template-rows: repeat(3, 75px);
+  gap: 2px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item-slot {
+  width: 75px;
+  height: 75px;
+  background-image: url('../assets/images/slot.png');
+  background-size: cover;
+  position: relative;
+}
+
+.item-slot img {
+  max-width: 80%;
+  max-height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ✅ 讓圖片精準置中 */
+  pointer-events: none;
+}
+
+.item-slot.clickable {
+  cursor: pointer;
+}
+
+/* 工具提示 */
+.tooltip {
+  z-index: 10000;
+  position: absolute;
+  background: url('../assets/images/talk_box.png') no-repeat center;
+  background-size: contain;
+  padding: 8px 12px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  display: none;
+  pointer-events: none;
+  min-width: 120px;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}

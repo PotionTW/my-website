@@ -1,0 +1,404 @@
+body {
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+
+  background-image: url('../assets/images/night.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* 睡眠模式：改用圖片當背景 */
+body.sleep-mode {
+  background-image: url('../assets/images/tree.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+  
+  /* 頂部導航欄 */
+  #top-bar {
+    position: fixed;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: top 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  
+  #top-bar.show {
+    top: 0 !important;
+  }
+  
+  .top-bar-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ff4c4c; /* 滑鼠懸停時變紅 */
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+
+  /*------------------------------------------------*/
+  
+  .nav-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .image-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .image-section img {
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  .image-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .image-text p {
+    font-size: 1.2rem;
+  }
+  .intro-gif {
+    position: absolute;
+    left: 200px;
+    top: 300px; /* 調整位置看效果 */
+    z-index: 1;
+  }
+  
+  .intro-gif img {
+    height: 200px;
+    width: auto;
+  }
+
+  .intro-section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    text-align: center;  
+  }
+  
+  .intro-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff6b6b;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.8s ease-out;
+    transition-delay: var(--delay, 0s);
+    text-align: center; /* 標題置中 */
+  }
+  
+  .intro-text {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.8s ease-out;
+    transition-delay: var(--delay, 0s);
+    font-size: 1.7rem;
+    text-align: left;
+    margin: 0;  /* 確保沒有左右 margin 擠壓 */
+  }
+  .intro-text_wait_talk {
+    opacity: 0;
+    transform: translateX(-20px);
+    /* transition 改成對兩個屬性都套用延遲 */
+    transition: opacity 0.8s ease-out var(--delay, 0s), 
+                transform 0.8s ease-out var(--delay, 0s);
+    font-size: 2rem;
+    margin: 0;
+    will-change: opacity, transform;
+  }
+  
+  /* 動畫顯示時 */
+  .animate-in .intro-title {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .animate-in .intro-text {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-in .intro-text_wait_talk {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  
+  .button-square {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/images/grass.jpg'); /* 確保路徑對 */
+    border-radius: 9px; /* 輕微圓角 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+  }
+
+  
+  /*底部欄位*/
+  #footer-bar {
+    background-color: #ffffff;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    background-size: 1600px 900px; 
+    background-image: url(../assets/images/night_mc.png);
+    background-size: cover;          /* 自動縮放填滿 */
+    background-repeat: no-repeat;    /* 不重複 */
+    background-position: top;     /* 居中顯示 */
+  }
+  
+  
+  .footer-bar-content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .footer-icon {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position:relative;
+    top: 75vh; /* 在grass上 */
+    border-radius: 9px;
+  }
+  
+  /* Discord hover 效果 */
+  .discord-icon:hover {
+    transform: translate(-4px, -4px); /* 向左上飄移 */
+    box-shadow: 8px 8px 2px rgb(59, 68, 161); /* 留在原地的 Discord 藍陰影 */
+  }
+  
+  /* YouTube hover 效果 */
+  .youtube-icon:hover {
+    transform: translate(-4px, -4px); /* 向左上飄移 */
+    box-shadow: 8px 8px 2px rgb(173, 1, 1); /* 留在原地的 YouTube 紅陰影 */
+  }
+  
+  .youtube-icon-roll:hover {
+    transform: translate(-4px, -4px); /* 向左上飄移 */
+    box-shadow: 8px 8px 2px rgb(173, 96, 1); /* 留在原地的 YouTube 紅陰影 */
+  }
+  
+  
+  /*底部欄位END*/
+
+
+  /* 裝飾 */
+  .img-decorate1 {
+    position: absolute;
+    right : 100px;
+    top: 300px; /* 調整位置看效果 */
+    z-index: 1;
+  }
+
+  .img-decorate1 img {
+    height: 200px;
+    width: auto;
+  }
+
+  .img-decorate2 {
+    position: absolute;
+    right : 380px;
+    top: 75%; /* 調整位置看效果 */
+    z-index: 1;
+  }
+
+  .img-decorate2 img {
+    height: 200px;
+    width: auto;
+  }
+
+  .img-decorate3 {
+    position: absolute;
+    left : 380px;
+    top: 80%; /* 調整位置看效果 */
+    z-index: 1;
+  }
+
+  .img-decorate3 img {
+    height: 200px;
+    width: auto;
+  }
+
+  .img-decorate4 {
+    position: absolute;
+    right : 30px;
+    top: 30%; /* 調整位置看效果 */
+    z-index: 1;
+    scale: 0.8;
+  }
+
+  .img-decorate4 img {
+    height: 200px;
+    width: auto;
+  }
+
+  .img-decorate5 {
+    position: absolute;
+    left : 30px;
+    top: 60%; /* 調整位置看效果 */
+    z-index: 1;
+  }
+
+  .img-decorate5 img {
+    height: 200px;
+    width: auto;
+  }
+
+  .img-decorate6 {
+    position: absolute;
+    right : 10px;
+    top: 53%; /* 調整位置看效果 */
+    z-index: 1;
+  }
+
+  .img-decorate6 img {
+    height: 200px;
+    width: auto;
+  }
+
+  .img-decorate7 {
+    position: absolute;
+    right : 240px;
+    top: 7%; /* 調整位置看效果 */
+    z-index: 1;
+  }
+
+  .img-decorate7 img {
+    height: 200px;
+    width: auto;
+  }
+
+  /* 裝飾END */
+  /* bed mod */
+  .sleep-button {
+    position: absolute; /* ✅ 要加這個，否則 top/left 無效 */
+    left: 50%;
+    top: 77vh;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s ease;
+    z-index: 1000; /* 可選，確保在最上層 */
+  }
+  
+    .sleep-button:hover {
+      transform: scale(1.1);
+    }
+  
+  /* 控制圖片大小 */
+  .sleep-icon {
+    width: 128px;
+    height: 64px;
+  }
+  
+  
+
+  
+
+
+  /* 響應式 */
+  @media (max-width: 768px) {
+    .image-text h2 { font-size: 1.8rem; }
+    .image-text p { font-size: 1rem; }
+    .intro-title { font-size: 2rem; }
+    .intro-text { font-size: 1rem; }
+    .intro-gif {
+      position: static;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .intro-gif img {
+      height: 100px;
+    }
+  
+    .intro-section {
+      flex-direction: column;
+    }
+  }

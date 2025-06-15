@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>藥水の合作夥伴</title>
+
+  <!-- 字體 & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/partners.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/Potion_pixel_mc.png">
+</head>
+<body>
+
+<!-- 導航欄 -->
+<div id="top-bar">
+  <div class="top-bar-content">
+    <div class="left-section">
+      <img src="assets/images/red_potion.png" alt="網站Logo" class="logo" />
+      <span class="nav-title">藥水の夥伴</span>
+    </div>
+    <nav class="nav-links">
+      <a href="introduce.html">主頁</a>
+      <a href="introduce.html#intro-section1">關於</a>
+      <a href="#">合作夥伴</a>
+      <a href="introduce.html#footer-bar">聯絡</a>
+    </nav>
+  </div>
+</div>
+
+<!-- 感謝文字 --> <div class="player-button-container"> <div class="thanks-text"> <span>合作夥伴 <img src="assets/images/partners.png" alt="thanks" class="partners-logo"></span> </div> </div>
+
+
+<!-- 玩家按鈕 -->
+<div class="player-button-container">
+  <div class="player-button" onclick="openChest('Potion_TW')">
+    <img src="assets/images/player_icon/Potion_TW.png" alt="Potion_TW" class="player-logo" />
+    <span class="player-name">Potion_TW</span>
+  </div>
+  <div class="player-button" onclick="openChest('coc_TW')">
+    <img src="assets/images/player_icon/coc_TW.png" alt="coc_TW" class="player-logo" />
+    <span class="player-name">coc_TW</span>
+  </div>
+  <div class="player-button" onclick="openChest('Rimon12_CN')">
+    <img src="assets/images/player_icon/Rimon12_CN.png" alt="Rimon12_CN" class="player-logo" />
+    <span class="player-name">Rimon12_CN</span>
+  </div>
+</div>
+
+
+<!-- Chest GUI（寶箱區塊） -->
+<div id="chestGUI" class="chest-overlay hidden" onclick="closeChest(event)">
+  <div class="chest-grid" id="chestGrid">
+    <!-- 格子由 JS 動態生成 -->
+  </div>
+</div>
+
+<!-- 提示框 -->
+<div id="tooltip" class="tooltip hidden"></div>
+
+<!-- 外部 JS -->
+<script src="js/partners.js"></script>
+<script src="js/chest_gui.js"></script>
+
+</body>
+</html>
