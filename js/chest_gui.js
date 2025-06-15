@@ -187,7 +187,7 @@ function createItemSlot(item) {
               { id: "change-page", src: 'assets/images/item/barrier.png', name: '無頁面', clickable: false, row: 2, column: 2 },
               { id: "Rimon12_CN-introduce", src: 'assets/images/item/barrier.png', name: '無介紹', clickable: false, row: 3, column: 2 },
               { id: "coc_TW-introduce", src: 'assets/images/item/Enchanted_Book.gif', name: '聯絡：', clickable: false, row: 4, column: 2 },
-              { id: "Rimon12_CN-introduce", src: 'assets/images/icon/Discord_logo.png', name: 'Discord', clickable: true,redirect: 'https://discord.gg/kP2JPJB5p2',openType: "newTab", row: 4, column: 3 },
+              { id: "Rimon12_CN-introduce", src: 'assets/images/icon/discord_logo.png', name: 'Discord', clickable: true,redirect: 'https://discord.gg/kP2JPJB5p2',openType: "newTab", row: 4, column: 3 },
               { id: "Rimon12_CN-introduce", src: 'assets/images/item/barrier.png', name: 'Youtube：無', clickable: false, row: 4, column: 4 },
           ]//-------------------------------------
       }
